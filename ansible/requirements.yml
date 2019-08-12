@@ -1,0 +1,15 @@
+# Ruby
+- src: https://github.com/zzet/ansible-rbenv-role
+  name: rbenv
+
+# NodeJS
+- src: https://github.com/geerlingguy/ansible-role-nodejs
+  name: nodejs
+
+# NTP
+- src: https://github.com/geerlingguy/ansible-role-ntp
+  name: ntp
+
+# PostgreSQL
+- src: https://github.com/ANXS/postgresql
+  name: postgresql

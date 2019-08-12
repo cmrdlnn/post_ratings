@@ -1,0 +1,38 @@
+---
+rbenv:
+  env: user
+  version: v1.1.2
+  default_ruby: 2.6.3
+  rubies:
+    - version: 2.6.3
+
+rbenv_users: [vagrant]
+rbenv_owner: 'vagrant'
+
+# PostgreSQL
+postgresql_version: 11
+postgresql_encoding: 'UTF-8'
+
+postgresql_users:
+  - name: user_post_ratings
+    encrypted: yes
+    pass: 123456
+
+postgresql_databases:
+  - name: post_ratings
+    owner: user_post_ratings
+  - name: post_ratings_test
+    owner: user_post_ratings
+
+postgresql_user_privileges:
+  - name: user_post_ratings
+    db: post_ratings
+    priv: "ALL"
+    role_attr_flags: "SUPERUSER"
+  - name: user_post_ratings
+    db: post_ratings_test
+    priv: "ALL"
+    role_attr_flags: "SUPERUSER"
+
+postgresql_listen_addresses:
+  - '*'

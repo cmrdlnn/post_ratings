@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  database: <%= ENV.fetch('DB_NAME') { 'post_ratings' } %>
+  encoding: <%= ENV.fetch('DB_ENCODING') { 'unicode' } %>
+  host: <%= ENV.fetch('DB_HOST') { 'localhost' } %>
+  password: <%= ENV.fetch('DB_PASS') { '123456' } %>
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+  timeout: <%= ENV.fetch('DB_TIMEOUT') { 5000 } %>
+  username: <%= ENV.fetch('DB_USER') { 'user_post_ratings' } %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: post_ratings_test
+
+production:
+  <<: *default
